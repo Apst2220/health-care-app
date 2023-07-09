@@ -13,12 +13,13 @@ import geopandas as gpd
 
 def health_dashboard_stats(request):
     health_stats_list = WorldHealthStatistics.objects.all()
-    return render(request, "index.html", {'health_stats_list': health_stats_list})
+    return render(request, "dashboard.html", {'health_stats_list': health_stats_list})
 
+# Step 1: Fix this
 def health_dashboard_map(request):
     map=folium.Map([51.5, -0.25], zoom_start=10)
     map=map._repr_html_()
-    return render(request, 'index.html' , {'health_stats_map': map})
+    return render(request, 'dashboard.html' , {'health_stats_map': map})
 
 def create_map(map_name, legend_name, geo_df, col_name, sex):
     if sex:
@@ -118,7 +119,7 @@ def health_dashboard_map_final(request):
         # throw an error
         pass
 
-    return render(request, 'index.html' , {'health_stats_map': world_map})
+    return render(request, 'dashboard.html' , {'health_stats_map': world_map})
     
     
 
