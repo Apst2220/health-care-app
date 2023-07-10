@@ -197,7 +197,11 @@
 								<div class="card-body px-4">
 									Hello
 										<!-- {{ health_stats_map  }} -->
-										health_stats_list = {{ health_stats_list  }}
+										{{health_stats_map1 | safe}}
+
+
+										<!-- health_stats_list = {{ health_data  }} -->
+										
 				
 									<!-- <ul>
 										{% for item in health_stats_list %}

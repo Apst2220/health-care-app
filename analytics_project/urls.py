@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 from django.views.generic import TemplateView
+from apps.dashboard import views
+from django.urls import include, path
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="dashboard.html"), name="dashboard"),
-    path("pipeline/", TemplateView.as_view(template_name="pipeline.html"), name="pipeline")
-    # path("", include(""))
+    path("", views.WorlMapView.as_view(template_name="dashboard.html"), name="dashboard"),
 ]
